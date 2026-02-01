@@ -20,7 +20,7 @@ Keep answers concise and punchy.
 `;
 
 export const getGymAssistantResponse = async (userMessage: string) => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT' });
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
